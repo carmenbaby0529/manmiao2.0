@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>曼喵纯女电竞‑约会大作战V17</title>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Microsoft YaHei",sans-serif;}
+
+body{
+
+  background:#fff6fa;
+
+  color:#442233;
+
+  padding:16px;
+
+  max-width:960px;
+
+  margin:0 auto;
+
+  background-image:radial-gradient(#ffd9e8 1px,transparent 1px);
+
+  background-size:24px 24px;
+
+}
+
+h1{
+
+  text-align:center;
+
+  color:#e8689c;
+
+  margin-bottom:16px;
+
+  font-size:24px;
+
+  text-shadow:0 1px 2px #ffc8dd;
+
+}
+
+.card{
+
+  background:#ffffffdd;
+
+  border:2px solid #f8c8dc;
+
+  border-radius:14px;
+
+  padding:18px;
+
+  margin-bottom:14px;
+
+  box-shadow:0 4px 12px #ffd6e480;
+
+}
+
+.card h2{
+
+  color:#d8608c;
+
+  font-size:17px;
+
+  margin-bottom:12px;
+
+  border-bottom:1px dashed #f2b8cc;
+
+  padding-bottom:6px;
+
+}
+
+.heart-bar{
+
+  height:26px;
+
+  background:#fce4ec;
+
+  border-radius:13px;
+
+  overflow:hidden;
+
+  margin:10px 0;
+
+  border:1px solid #f8c8dc;
+
+}
+
+.heart-fill{
+
+  height:100%;
+
+  background:linear-gradient(90deg,#ff4477,#ff94b8);
+
+  width:50%;
+
+  transition:0.35s;
+
+}
+
+.heart-num{
+
+  display:flex;
+
+  gap:10px;
+
+  align-items:center;
+
+  margin-bottom:10px;
+
+  flex-wrap:wrap;
+
+}
+
+.heart-num input{
+
+  width:90px;
+
+  padding:6px 8px;
+
+  border:1px solid #f2b8cc;
+
+  border-radius:6px;
+
+  font-size:16px;
+
+}
+
+.select-wrap select{
+
+  padding:7px 10px;
+
+  border-radius:6px;
+
+  border:1px solid #f2b8cc;
+
+  background:#fff;
+
+}
+
+.row-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:6px 2px;
+
+  flex-wrap:wrap;
+
+}
+
+.row-item input[type="checkbox"]{
+
+  width:18px;height:18px;
+
+  cursor:pointer;
+
+}
+
+.row-item input[type="radio"]{
+
+  width:16px;height:16px;
+
+  cursor:pointer;
+
+}
+
+.row-item input[type="number"]{
+
+  width:72px;
+
+  padding:5px;
+
+  border:1px solid #f2b8cc;
+
+  border-radius:6px;
+
+}
+
+.btn{
+
+  padding:9px 14px;
+
+  border:none;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  font-size:14px;
+
+  margin:4px;
+
+}
+
+.btn-reset{background:#ff88aa;color:white;}
+
+.btn-clear-log{background:#7799ff;color:white;}
+
+.btn-screenshot{background:#88cc66;color:white;}
+
+.btn-confirm{background:#e64980;color:white;font-weight:bold;}
+
+.logbox{
+
+  background:#fff0f6;
+
+  border:1px solid #f8c8dc;
+
+  border-radius:8px;
+
+  padding:10px;
+
+  max-height:180px;
+
+  overflow-y:auto;
+
+  font-size:13px;
+
+}
+
+.log-plus{color:#c82458;}
+
+.log-minus{color:#2266bb;}
+
+.stage-tip{
+
+  background:#ffe6ef;
+
+  padding:8px 12px;
+
+  border-radius:8px;
+
+  margin-bottom:10px;
+
+  font-size:14px;
+
+}
+
+.calc-box{
+
+  background:#fff0f7;
+
+  padding:12px;
+
+  border-radius:10px;
+
+  margin-top:8px;
+
+}
+
+.count-item{
+
+  display:flex;
+
+  gap:8px;
+
+  align-items:center;
+
+  margin:6px 0;
+
+}
+
+.plot-group{
+
+  border:1px dashed #f2c0d4;
+
+  padding:10px;
+
+  border-radius:8px;
+
+  margin:8px 0;
+
+}
+
+.end-lock{
+
+  background:#ffecec;
+
+  border:2px solid #ff8888;
+
+  padding:14px;
+
+  text-align:center;
+
+  font-size:18px;
+
+  color:#c03030;
+
+  border-radius:12px;
+
+}
+
+.highlight{
+
+  font-weight:bold;
+
+  color:#c02060;
+
+}
+
+.tip-negative{
+
+  font-size:12px;color:#d04466;margin-top:4px;
+
+}
+
+@media(max-width:600px){
+
+  h1{font-size:19px;}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="captureWrap">
+
+<h1>💖曼喵纯女电竞‑约会大作战V17💖</h1>
+
+<div class="card">
+
+  <h2>💗 当前好感度</h2>
+
+  <div class="heart-bar">
+
+    <div class="heart-fill" id="heartFill"></div>
+
+  </div>
+
+  <div class="heart-num">
+
+    <span>总好感：</span>
+
+    <input id="heartInput" type="number" step="0.1"/>
+
+    <button class="btn" onclick="applyManualHeart()">确认修改好感</button>
+
+    <button class="btn" onclick="manualSetHeartPopup()">弹窗修改好感</button>
+
+  </div>
+
+  <div class="select-wrap">
+
+    <label>选择档位：</label>
+
+    <select id="levelSel">
+
+      <option value="0">‑‑请选择档位‑‑</option>
+
+      <option value="0">真爱版 666R｜保底1788w｜初始好感0【最低好感0，不能负数】</option>
+
+      <option value="-50">命中注定版 988R｜保底2588w｜初始好感‑50【最低‑50】</option>
+
+      <option value="-100">一生一世版1314R｜保底3688w｜初始好感‑100【最低‑100】</option>
+
+    </select>
+
+    <button class="btn" onclick="applyLevel()">应用档位</button>
+
+  </div>
+
+  <div class="stage-tip" id="stageTip">📌剧情阶段：未触发</div>
+
+  <div class="tip-negative">📌规则：好感下限等于档位初始好感；撤离失败获取类好感减半；保底允许负数</div>
+
+  <div id="endNotice"></div>
+
+  <div class="calc-box">
+
+    <div><strong>💰保底计算器</strong></div>
+
+    <div>档位原始保底：<span id="originLevelGuarantee">0</span> w</div>
+
+    <div>档位好感下限：<span id="heartFloorShow">0</span></div>
+
+    <div>总保底(档位+支线+情话+撤离失败补偿)：<span id="baseTotalGuarantee">0</span> w</div>
+
+    <div>当前带出物资累计：<span id="totalBringOut">0</span> w</div>
+
+    <div class="highlight">目前实际保底：<span id="nowRealGuarantee">0</span> w</div>
+
+    <div class="tip-negative">规则：勾选撤离失败，本局带出＜80w，总保底+60w；<b>保底允许为负数</b><br>⚠带出填0也需要勾选【撤离失败】复选框才会触发+60w</div>
+
+  </div>
+
+</div>
+
+<div class="card">
+
+  <h2>🎬特殊剧情二（好感≥50自动触发，仅一次，结算时生效）</h2>
+
+  <div class="plot-group">
+
+    <div class="row-item">
+
+      <span>剧情二状态：<span id="plot2Status">未触发</span></span>
+
+    </div>
+
+    <div class="row-item">
+
+      <input type="radio" name="plot2Res" id="plot2Success" value="success">
+
+      <label>✅丘比特的眷顾：摸出4个相同小金 【+5好感】</label>
+
+    </div>
+
+    <div class="row-item">
+
+      <input type="radio" name="plot2Res" id="plot2Fail" value="fail">
+
+      <label>❌路西法的破坏：未凑齐4个相同小金 【‑5好感】</label>
+
+    </div>
+
+    <div style="font-size:13px;color:#884460;">规则：好感≥50触发；只有±5好感，确认本局结算时执行，结算自动清空选项。</div>
+
+  </div>
+
+</div>
+
+<div class="card">
+
+  <h2>📊本局本局信息填写（结算自动清空）</h2>
+
+  <div class="count-item">
+
+    <label>击败敌人数：</label>
+
+    <input id="killCnt" type="number" min="0" value="0">
+
+    <span>×+2好感/人</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>带出AW子弹数：</label>
+
+    <input id="awCnt" type="number" min="0" value="0">
+
+    <span>×+1好感/发</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>摸出小金数量(板板带出)：</label>
+
+    <input id="goldCnt" type="number" min="0" value="0">
+
+    <span>×+1好感/个</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>四格及以下小红数量：</label>
+
+    <input id="smallRedCnt" type="number" min="0" value="0">
+
+    <span>×+5好感/个</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>六格及以上大红/金卡数量：</label>
+
+    <input id="bigRedCnt" type="number" min="0" value="0">
+
+    <span>×+15好感/个</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>紫色房卡数量：</label>
+
+    <input id="purpleCardCnt" type="number" min="0" value="0">
+
+    <span>×+8好感/张</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>红色房卡数量：</label>
+
+    <input id="redCardCnt" type="number" min="0" value="0">
+
+    <span>×+18好感/张</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>非洲之心/海洋之泪数量：</label>
+
+    <input id="specialGemCnt" type="number" min="0" value="0">
+
+    <span>×+50好感/件</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>板板救起打手次数：</label>
+
+    <input id="saveSelfCnt" type="number" min="0" value="0">
+
+    <span>×‑2好感/次</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>剧情三漏说情话局数：</label>
+
+    <input id="missLoveWordInput" type="number" min="0" value="0">
+
+    <span>每局+100w保底（好感≥80才生效）</span>
+
+  </div>
+
+  <div class="count-item">
+
+    <label>本局带出物资(w)：</label>
+
+    <input id="bringOutInput" type="number" min="0" value="0">
+
+    <span>本局带出多少万，结算自动累加总带出；失败带出0也要填0</span>
+
+  </div>
+
+</div>
+
+<div class="card">
+
+<h2>📝单局事件（结算后自动清零）</h2>
+
+<div class="row-item">
+
+  <input type="checkbox" id="evMulti1">
+
+  <label>千万及以上成功撤离 +10好感</label>
+
+</div>
+
+<div class="row-item">
+
+  <input type="checkbox" id="evMulti2">
+
+  <label>撤离成功 +10好感</label>
+
+</div>
+
+<div class="row-item">
+
+  <input type="checkbox" id="evMulti3">
+
+  <label>⚠撤离失败 ‑10好感【必须勾选！带出0/50w失败不勾不会+60w保底；本局获取类好感减半】</label>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💌本局支线漏做（结算后自动清零）</h2>
+
+<div class="row-item">
+
+  <label>支线漏做次数：</label>
+
+  <input id="missTaskInput" type="number" min="0" value="0">
+
+  <span>次，每次+50w保底，结算计入总累计</span>
+
+</div>
+
+<p style="margin-top:8px;font-size:13px;color:#884460;">填写本局漏做多少次，结算后输入框清空，次数累加进总保底。</p>
+
+</div>
+
+<div class="card">
+
+  <h2>✅本局结算操作</h2>
+
+  <div class="row-item">
+
+    <button class="btn btn-confirm" onclick="confirmRoundSettle()">确认本局结算（全部填完再点）</button>
+
+  </div>
+
+  <div style="font-size:13px;color:#884460;margin-top:6px;">确认结算：本局物品、事件勾选、支线漏做、本局带出物资全部自动清空；累计数据继承到下一局；好感≥100直接结束全部流程。</div>
+
+</div>
+
+<div class="card">
+
+<h2>📋操作与日志</h2>
+
+<div>
+
+<button class="btn btn-reset" onclick="resetAll()">🔄全部重置（全部数据清零）</button>
+
+<button class="btn btn-clear-log" onclick="clearLog()">清空日志</button>
+
+<button class="btn btn-screenshot" onclick="saveScreenshot()">📷导出截图</button>
+
+</div>
+
+<div class="logbox" id="logBox"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let heart = 0;
+
+let heartFloor = 0; //档位好感下限，跟随档位变化
+
+const MAX_HEART = 200;
+
+const HEART_END = 100;
+
+const levelMap = {
+
+  "0":{guarantee:1788, floor:0},
+
+  "-50":{guarantee:2588, floor:-50},
+
+  "-100":{guarantee:3688, floor:-100}
+
+};
+
+let baseGuarantee = 0;
+
+let missLoveWordTotal = 0;
+
+let missTaskTotal = 0;
+
+let totalBringOut = 0;
+
+let failCompensateTotal = 0; //全局持久：撤离失败补偿累计
+
+let plot1Triggered = false;
+
+let plot1Finished = false;
+
+let plot1HateGoldName = "";
+
+let plot1HitHateGold = false;
+
+let plot1EvacSuccess = false;
+
+let plot2Triggered = false;
+
+let plot2Executed = false;
+
+let gameComplete = false;
+
+const heartInput = document.getElementById('heartInput');
+
+const heartFill = document.getElementById('heartFill');
+
+const logBox = document.getElementById('logBox');
+
+const stageTip = document.getElementById('stageTip');
+
+const levelSel = document.getElementById('levelSel');
+
+const plot2Status = document.getElementById('plot2Status');
+
+const endNotice = document.getElementById('endNotice');
+
+const heartFloorShow = document.getElementById('heartFloorShow');
+
+function render(){
+
+  if(gameComplete){
+
+    endNotice.innerHTML = `<div class="end-lock">🏁好感达到100，全部流程结束！</div>`;
+
+  }else{
+
+    endNotice.innerHTML = "";
+
+  }
+
+  heartInput.value = heart;
+
+  const ratio = ((heart-heartFloor) / (MAX_HEART-heartFloor)) * 100;
+
+  heartFill.style.width = ratio + "%";
+
+  heartFloorShow.innerText = heartFloor;
+
+  checkPlotAutoTrigger();
+
+  updatePlotStatusText();
+
+  updateStage();
+
+  calcGuaranteeShow();
+
+}
+
+function addLog(text,isPlus){
+
+  const div = document.createElement('div');
+
+  div.className = isPlus ? "log-plus" : "log-minus";
+
+  div.innerText = text;
+
+  logBox.appendChild(div);
+
+  logBox.scrollTop = logBox.scrollHeight;
+
+}
+
+function checkPlotAutoTrigger(){
+
+  if(gameComplete) return;
+
+  if(heart >=20 && !plot1Triggered && !plot1Finished){
+
+    plot1Triggered = true;
+
+    addLog("🎬自动触发【特殊剧情一】后台逻辑",true);
+
+  }
+
+  if(heart >=50 && !plot2Triggered && !plot2Executed){
+
+    plot2Triggered = true;
+
+    addLog("🎬自动触发【特殊剧情二】：凑齐4个相同小金=丘比特眷顾+5，否则路西法破坏‑5，本局确认结算时生效",true);
+
+  }
+
+  if(heart >= HEART_END && !gameComplete){
+
+    gameComplete = true;
+
+    addLog("🏁好感到达100，整体流程结束！",true);
+
+  }
+
+}
+
+function updatePlotStatusText(){
+
+  if(plot2Executed){
+
+    plot2Status.innerText = "已结算完毕";
+
+  }else if(plot2Triggered){
+
+    plot2Status.innerText = "待本局结算";
+
+  }else{
+
+    plot2Status.innerText = "未触发";
+
+  }
+
+}
+
+function updateStage(){
+
+  if(gameComplete){
+
+    stageTip.innerText = "🏁全部流程已结束";
+
+    return;
+
+  }
+
+  let tip = "📌剧情阶段：未触发";
+
+  if(heart >= 100) tip = "💘好感≥100：触发剧情四！板板可指定打手唱歌/撒娇八连";
+
+  else if(heart >=80) tip = "💖好感≥80：触发剧情三！每局开局打手要说情话，漏说一局+100w";
+
+  else if(heart >=50) tip = "💓好感≥50：触发特殊剧情二";
+
+  else if(heart >=20) tip = "💕好感≥20：触发特殊剧情一（后台运行）";
+
+  stageTip.innerText = tip;
+
+}
+
+function confirmRoundSettle(){
+
+  if(gameComplete){
+
+    alert("流程已经结束，不能再结算本局");
+
+    return;
+
+  }
+
+  const killCnt = Number(document.getElementById("killCnt").value)||0;
+
+  const awCnt = Number(document.getElementById("awCnt").value)||0;
+
+  const goldCnt = Number(document.getElementById("goldCnt").value)||0;
+
+  const smallRedCnt = Number(document.getElementById("smallRedCnt").value)||0;
+
+  const bigRedCnt = Number(document.getElementById("bigRedCnt").value)||0;
+
+  const purpleCardCnt = Number(document.getElementById("purpleCardCnt").value)||0;
+
+  const redCardCnt = Number(document.getElementById("redCardCnt").value)||0;
+
+  const specialGemCnt = Number(document.getElementById("specialGemCnt").value)||0;
+
+  const saveSelfCnt = Number(document.getElementById("saveSelfCnt").value)||0;
+
+  const missLoveWordInput = Number(document.getElementById("missLoveWordInput").value)||0;
+
+  const missTaskInput = Number(document.getElementById("missTaskInput").value)||0;
+
+  const bringOutNow = Number(document.getElementById("bringOutInput").value)||0;
+
+  const isFail = document.getElementById("evMulti3").checked;
+
+  missLoveWordTotal += missLoveWordInput;
+
+  missTaskTotal += missTaskInput;
+
+  totalBringOut += bringOutNow;
+
+  let addFailBonus = 0;
+
+  if(isFail && bringOutNow < 80){
+
+    addFailBonus = 60;
+
+    failCompensateTotal += addFailBonus;
+
+    addLog("⚠️触发补偿规则：撤离失败，本局带出"+bringOutNow+"w＜80w，全局失败补偿累计+60w",false);
+
+  }
+
+  // 【获取类好感】击杀、AW、小金、小红、大红、房卡、宝石
+
+  let gainDelta = 0;
+
+  gainDelta += killCnt * 2;
+
+  gainDelta += awCnt * 1;
+
+  let goldReal = goldCnt;
+
+  if(plot1Triggered && !plot1Finished && plot1HitHateGold){
+
+    goldReal = Math.max(0,goldCnt -1);
+
+    addLog("⚠️剧情一生效：摸到指定讨厌小金，该小金不计入好感",false);
+
+  }
+
+  gainDelta += goldReal *1;
+
+  gainDelta += smallRedCnt *5;
+
+  gainDelta += bigRedCnt *15;
+
+  gainDelta += purpleCardCnt *8;
+
+  gainDelta += redCardCnt *18;
+
+  gainDelta += specialGemCnt *50;
+
+  //撤离失败：获取类好感减半
+
+  if(isFail){
+
+    const oldGain = gainDelta;
+
+    gainDelta = gainDelta / 2;
+
+    addLog(`⚠撤离失败，本局获取类好感(${oldGain})减半 → ${gainDelta}`,false);
+
+  }
+
+  //扣分项（不参与减半）
+
+  let minusDelta = 0;
+
+  minusDelta += saveSelfCnt * (-2);
+
+  if(document.getElementById("evMulti1").checked) minusDelta +=10;
+
+  if(document.getElementById("evMulti2").checked) minusDelta +=10;
+
+  if(document.getElementById("evMulti3").checked) minusDelta -=10;
+
+  let plot2Delta = 0;
+
+  if(plot2Triggered && !plot2Executed){
+
+    plot2Executed = true;
+
+    if(document.getElementById("plot2Success").checked){
+
+      plot2Delta +=5;
+
+      addLog("✨剧情二结算：丘比特的眷顾 +5好感",true);
+
+    }else if(document.getElementById("plot2Fail").checked){
+
+      plot2Delta -=5;
+
+      addLog("💔剧情二结算：路西法的破坏 -5好感",false);
+
+    }else{
+
+      plot2Executed = false;
+
+      alert("剧情二已触发，请选择丘比特眷顾 / 路西法破坏");
+
+      return;
+
+    }
+
+  }
+
+  if(plot1EvacSuccess && plot1Triggered && !plot1Finished){
+
+    plot1Finished = true;
+
+    addLog("🎉本局千万撤离成功，特殊剧情一正式结束",true);
+
+  }
+
+  const deltaTotal = gainDelta + minusDelta + plot2Delta;
+
+  const oldHeart = heart;
+
+  heart = heart + deltaTotal;
+
+  //强制限制好感不能低于档位下限 heartFloor
+
+  heart = Math.max(heartFloor, Math.min(MAX_HEART, heart));
+
+  const baseTotal = baseGuarantee + missTaskTotal*50 + missLoveWordTotal*100 + failCompensateTotal;
+
+  const realNowGuarantee = baseTotal;
+
+  alert(`====本局结算结果====
+
+本局好感变动：${deltaTotal>0?"+":""}${deltaTotal}
+
+结算前好感：${oldHeart}
+
+✅结算后当前总好感：${heart}
+
+📦本局支线漏做：${missTaskInput}次｜累计${missTaskTotal}次
+
+📦本局带出物资：${bringOutNow}w｜累计带出：${totalBringOut}w
+
+${addFailBonus>0?"⚠️本局触发失败补偿+60w，累计失败补偿总和："+failCompensateTotal+"w":""}
+
+💬累计漏说情话：${missLoveWordTotal}局
+
+————————
+
+档位好感下限：${heartFloor}
+
+档位原始保底：${baseGuarantee} w
+
+总保底(档位+支线+情话+撤离失败补偿)：${baseTotal} w
+
+当前带出物资累计：${totalBringOut} w
+
+目前实际保底：${realNowGuarantee} w
+
+【说明：保底支持负数；好感不能低于档位初始值】`);
+
+  addLog(`📦本局结算完成，本局好感变动${deltaTotal>0?"+":""}${deltaTotal}，好感 ${oldHeart} → ${heart}`,deltaTotal>0);
+
+  addLog(`📋本局支线漏做${missTaskInput}次，支线保底+${missTaskInput*50}w，累计${missTaskTotal}次`,true);
+
+  addLog(`📋本局带出物资${bringOutNow}w，累计带出物资${totalBringOut}w`,true);
+
+  if(addFailBonus>0){
+
+    addLog(`📋本局撤离失败补偿+60w，全部累计失败补偿：${failCompensateTotal}w`,true);
+
+  }
+
+  document.getElementById("killCnt").value=0;
+
+  document.getElementById("awCnt").value=0;
+
+  document.getElementById("goldCnt").value=0;
+
+  document.getElementById("smallRedCnt").value=0;
+
+  document.getElementById("bigRedCnt").value=0;
+
+  document.getElementById("purpleCardCnt").value=0;
+
+  document.getElementById("redCardCnt").value=0;
+
+  document.getElementById("specialGemCnt").value=0;
+
+  document.getElementById("saveSelfCnt").value=0;
+
+  document.getElementById("missLoveWordInput").value=0;
+
+  document.getElementById("bringOutInput").value=0;
+
+  document.getElementById("evMulti1").checked=false;
+
+  document.getElementById("evMulti2").checked=false;
+
+  document.getElementById("evMulti3").checked=false;
+
+  document.getElementById("plot2Success").checked = false;
+
+  document.getElementById("plot2Fail").checked = false;
+
+  document.getElementById("missTaskInput").value=0;
+
+  plot1HitHateGold = false;
+
+  plot1EvacSuccess = false;
+
+  render();
+
+}
+
+function calcGuaranteeShow(){
+
+  const baseTotal = baseGuarantee + missTaskTotal * 50 + missLoveWordTotal * 100 + failCompensateTotal;
+
+  const realNowGuarantee = baseTotal;
+
+  document.getElementById('originLevelGuarantee').innerText = baseGuarantee;
+
+  document.getElementById('baseTotalGuarantee').innerText = realNowGuarantee;
+
+  document.getElementById('totalBringOut').innerText = totalBringOut;
+
+  document.getElementById('nowRealGuarantee').innerText = realNowGuarantee;
+
+}
+
+function applyManualHeart(){
+
+  if(gameComplete){
+
+    alert("流程已结束，不能修改好感");
+
+    return;
+
+  }
+
+  let num = Number(heartInput.value);
+
+  if(isNaN(num)){
+
+    alert("请输入有效数字！");
+
+    render();
+
+    return;
+
+  }
+
+  const oldVal = heart;
+
+  heart = Math.max(heartFloor, Math.min(MAX_HEART, num));
+
+  addLog(`✏直接输入修改总好感：${oldVal} → ${heart}`, heart>oldVal);
+
+  render();
+
+  alert("✅好感修改完成，当前总好感："+heart);
+
+}
+
+function manualSetHeartPopup(){
+
+  if(gameComplete){
+
+    alert("流程已结束，不能修改好感");
+
+    return;
+
+  }
+
+  const inputVal = prompt("请输入总好感数值(下限"+heartFloor+" ~ 200)", heart);
+
+  if(inputVal === null) return;
+
+  const num = Number(inputVal);
+
+  if(isNaN(num)){
+
+    alert("请输入有效数字！");
+
+    return;
+
+  }
+
+  const oldVal = heart;
+
+  heart = Math.max(heartFloor, Math.min(MAX_HEART, num));
+
+  addLog(`✏弹窗修改总好感：${oldVal} → ${heart}`, heart>oldVal);
+
+  render();
+
+  alert("✅好感修改完成，当前总好感："+heart);
+
+}
+
+function applyLevel(){
+
+  if(gameComplete){alert("流程已结束");return;}
+
+  const val = Number(levelSel.value);
+
+  const cfg = levelMap[String(val)];
+
+  heart = val;
+
+  heartFloor = cfg.floor;
+
+  baseGuarantee = cfg.guarantee;
+
+  addLog(`切换档位，初始好感=${val}，好感下限=${heartFloor}，档位原始保底${baseGuarantee}w`,true);
+
+  render();
+
+}
+
+function resetAll(){
+
+  heart = 0;
+
+  heartFloor = 0;
+
+  baseGuarantee = 0;
+
+  missLoveWordTotal = 0;
+
+  missTaskTotal = 0;
+
+  totalBringOut = 0;
+
+  failCompensateTotal = 0;
+
+  plot1Triggered = false;
+
+  plot1Finished = false;
+
+  plot1HateGoldName = "";
+
+  plot1HitHateGold = false;
+
+  plot1EvacSuccess = false;
+
+  plot2Triggered = false;
+
+  plot2Executed = false;
+
+  gameComplete = false;
+
+  document.getElementById("killCnt").value=0;
+
+  document.getElementById("awCnt").value=0;
+
+  document.getElementById("goldCnt").value=0;
+
+  document.getElementById("smallRedCnt").value=0;
+
+  document.getElementById("bigRedCnt").value=0;
+
+  document.getElementById("purpleCardCnt").value=0;
+
+  document.getElementById("redCardCnt").value=0;
+
+  document.getElementById("specialGemCnt").value=0;
+
+  document.getElementById("saveSelfCnt").value=0;
+
+  document.getElementById("missLoveWordInput").value=0;
+
+  document.getElementById("missTaskInput").value=0;
+
+  document.getElementById("bringOutInput").value=0;
+
+  document.getElementById("evMulti1").checked=false;
+
+  document.getElementById("evMulti2").checked=false;
+
+  document.getElementById("evMulti3").checked=false;
+
+  document.getElementById("plot2Success").checked = false;
+
+  document.getElementById("plot2Fail").checked = false;
+
+  levelSel.value="0";
+
+  addLog("🔄全部重置，所有数据全部清零（撤离失败补偿已清空）",true);
+
+  render();
+
+}
+
+function clearLog(){
+
+  logBox.innerHTML="";
+
+}
+
+async function saveScreenshot(){
+
+  const wrap = document.getElementById("captureWrap");
+
+  try{
+
+    const canvas = await html2canvas(wrap,{scale:2,backgroundColor:"#fff6fa"});
+
+    const link = document.createElement('a');
+
+    link.download = "曼喵约会大作战结算截图.png";
+
+    link.href = canvas.toDataURL("image/png");
+
+    link.click();
+
+    addLog("📷已导出结算截图",true);
+
+  }catch(e){
+
+    alert("截图失败，请刷新重试");
+
+  }
+
+}
+
+window.setPlot1HateGold = function(name){
+
+  plot1HateGoldName = name;
+
+  alert(`已设置剧情一讨厌小金：${name}`);
+
+}
+
+window.setPlot1HitHateGold = function(){
+
+  plot1HitHateGold = true;
+
+  alert("本局标记：已摸到讨厌小金");
+
+}
+
+window.setPlot1EvacOk = function(){
+
+  plot1EvacSuccess = true;
+
+  alert("本局标记：千万撤离成功");
+
+}
+
+window.onload = ()=>{
+
+  render();
+
+  addLog("V17就绪：动态好感下限；撤离失败获取类好感减半；失败补偿持久化",true);
+
+}
+
+</script>
+
+</body>
+
+</html>
